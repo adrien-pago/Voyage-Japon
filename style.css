@@ -1,0 +1,265 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0f7fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style pour le titre avec une image en arrière-plan */
+h1.display-5 {
+    font-size: 10vw; /* Taille de la police, ajuste si nécessaire */
+    font-weight: bold; /* Style gras */
+    background: url('/assets/photo/Tokyo/tokyo14.jpg') no-repeat center; /* Chemin vers ton image */
+    background-size: cover; /* Assure que l'image couvre tout le texte */
+    -webkit-background-clip: text; /* Découpe l'image dans le texte */
+    background-clip: text; /* Supporte d'autres navigateurs */
+    color: transparent; /* Rend le texte transparent pour que seule l'image soit visible */
+    margin: 0;
+    padding: 0;
+    line-height: 1.2; /* Ajuste l'espacement vertical */
+}
+
+/* Centrer le texte */
+.text-center {
+    text-align: center;
+}
+
+/* Styles pour les encadrés */
+.rounded {
+    border-radius: 8px;
+}
+
+.shadow-sm {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour la grille */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#itinerary-map {
+    max-height: 655px;
+    height: auto;
+}
+
+#itinerary-description {
+    overflow-x: hidden;
+    background-color: #ffffff;
+    max-height: 645px;
+}
+
+/* Styles pour la description de l'itinéraire */
+#itinerary-description-content {
+    padding: 15px;
+}
+
+.day-description {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f1f8f9;
+    border-left: 5px solid #007bff;
+    border-radius: 5px;
+}
+
+/* Styles pour le menu entre photo et vidéo */
+/* Conteneur de boutons */
+#menu-photo-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Ajuste la hauteur du conteneur si nécessaire */
+    padding: 0;
+}
+
+/* Conteneur pour les boutons */
+.buttons-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styles pour les boutons */
+#menu-photo-video .btn {
+    flex: 1;
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 0; /* Supprime les bords arrondis pour qu'ils soient carrés */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Premier bouton (Photo) */
+#photo-album-btn {
+    background-color: #398ce6;
+}
+
+/* Séparation des boutons avec une ligne blanche */
+#menu-photo-video .btn + .btn {
+    border-left: 2px solid #ffffff; /* Ligne blanche de séparation */
+}
+
+/* Changement de couleur au survol */
+#menu-photo-video .btn:hover {
+    background-color: #0056b3; /* Ajuste la couleur au survol */
+}
+
+/* ------------------------ Media display  ------------------------------------*/
+#media-display {
+    overflow: auto;
+    max-width: 100%;
+    max-height: 550px;
+    margin: 0 auto;
+    min-height: 400px;
+    padding: 20px; /* Espace intérieur */
+    box-sizing: border-box;
+    background-color: #e0f7fa !important; /* Couleur de fond */
+    border-radius: 8px; /* Coins arrondis */
+    border: 2px solid #ffffff; /* Bord blanc pour le cadre */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre douce pour un effet de profondeur */
+}
+
+/* Styles pour les vignettes d'album photo */
+.photo-thumbnail {
+    width: 100%; 
+    height: 20vh;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px 8px 0 0;
+}
+
+.photo-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.city-name-overlay { 
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Flexbox grid */
+.row.gx-4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.col-md-3, .col-sm-4, .col-6 {
+    flex: 1 1 calc(25% - 1.5rem);
+    max-width: calc(25% - 1.5rem);
+    box-sizing: border-box;
+}
+
+/* Gallery styles */
+.titre-galery h1{
+    font-size: 10vw; /* Taille de la police, ajuste si nécessaire */
+    font-weight: bold; /* Style gras */
+    background: url('/assets/photo/Tokyo/tokyo14.jpg') no-repeat center; /* Chemin vers ton image */
+    background-size: cover; /* Assure que l'image couvre tout le texte */
+    -webkit-background-clip: text; /* Découpe l'image dans le texte */
+    background-clip: text; /* Supporte d'autres navigateurs */
+    color: transparent; /* Rend le texte transparent pour que seule l'image soit visible */
+    margin: 0;
+    padding: 0;
+    line-height: 1.2; /* Ajuste l'espacement vertical */
+    text-align: center;
+}
+#photo-gallery {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 3%;
+}
+
+#main-photo-section {
+    position: relative;
+    padding: 1px; /* Ajoute un peu d'espace autour du conteneur pour le contour */
+    background-color: white; /* Couleur de fond du conteneur pour le contour */
+    border-radius: 3%;
+
+}
+
+#gallery-photo {
+    width: 100%; /* Prend toute la largeur disponible */
+    height: 100vh; /* Garde les proportions de l'image */
+    max-height: 600px; /* Limite la hauteur du conteneur */
+    border: 5px solid white; /* Contour blanc autour de l'image */
+    box-sizing: border-box; /* Inclut le bord dans les dimensions de l'image */
+    border-radius: 3%;
+}
+
+#photo-description {
+    background-color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* Styles pour les mosaïque vignettes d'images dans la gallery */
+#thumbnail-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Permet le wrapping des miniatures à la ligne suivante */
+    gap: 10px; /* Espacement entre les miniatures */
+    padding: 10px;
+    justify-content: start; /* Aligne les miniatures sur la gauche */
+}
+
+.thumbnail-photo {
+    width: 80px;  /* Largeur fixe pour les miniatures */
+    height: 80px; /* Hauteur fixe pour les miniatures */
+    object-fit: cover; /* Remplit la vignette tout en gardant les proportions */
+    border-radius: 4px; /* Coins légèrement arrondis */
+    border: 2px solid #ddd; /* Bord gris clair autour des miniatures */
+}
+
+.thumbnail-photo:hover {
+    border-color: #333; /* Change la couleur du bord au survol */
+    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+}
+
+/*   Style pour la vidéo */
+.video-fullscreen{
+    max-width: 100%; /* Empêche la vidéo de dépasser la largeur du conteneur */
+    height: auto;    /* Ajuste la hauteur automatiquement pour conserver les proportions */
+    display: block;  /* Évite les marges supplémentaires autour de la vidéo */
+    margin: 0 auto;  /* Centre la vidéo horizontalement si elle est plus petite que le conteneur */
+    box-sizing: border-box; /* Inclut les bordures et le padding dans les dimensions totales */
+}
+
+
+
+/* Media Queries pour le responsive */
+@media (width< 500px) {
+    .col-md-3, .col-sm-4, .col-6 {
+        flex: 1 1 calc(50% - 1.5rem);
+        max-width: calc(50% - 1.5rem);
+    }
+    h1.display-5 {
+        font-size: 20vw; /* Taille de la police, ajuste si nécessaire */
+    }
+
+    #menu-photo-video {
+    height: 50px;
+    }
+
+   
+}
