@@ -6,7 +6,7 @@ document.getElementById('video-btn').addEventListener('click', function() {
     displayVideo();
 });
 
-////////////////////// Itinéraire à coté de la carte japon //////////////////////
+////////////////////// Affichage des vignettes de chaque ville //////////////////////
 function displayPhotoThumbnails() {
     const mediaDisplay = document.getElementById('media-display');
     mediaDisplay.innerHTML = '';
@@ -27,7 +27,7 @@ function displayPhotoThumbnails() {
     ];
 
     const rowElement = document.createElement('div');
-    rowElement.classList.add('row', 'gx-4'); // Utilisation des classes Bootstrap pour la grille
+    rowElement.classList.add('row', 'gx-4');
 
     cities.forEach(city => {
         const thumbnailContainer = document.createElement('div');
@@ -43,7 +43,7 @@ function displayPhotoThumbnails() {
         cityNameOverlay.textContent = city.city;
 
         thumbnailElement.addEventListener('click', function() {
-            displayCityGallery(city.city);
+            openCityGalleryInFancybox(city.city);
         });
 
         thumbnailContainer.appendChild(thumbnailElement);
@@ -54,140 +54,68 @@ function displayPhotoThumbnails() {
     mediaDisplay.appendChild(rowElement);
 }
 
-////////////////////// Gallery photo par ville //////////////////////
-function displayCityGallery(city) {
-    const mediaDisplay = document.getElementById('media-display');
-    mediaDisplay.innerHTML = `
-        <div class="titre-galery">
-            <h1 id="city-name">${city}</h1>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 col-md-12" id="main-photo-section">
-                <div id="photo-gallery">
-                    <img id="gallery-photo" src="" alt="${city}" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-12 d-none d-lg-flex" id="thumbnail-section">
-                <div id="thumbnail-gallery" class="d-flex flex-column overflow-auto" style="max-height: 600px;">
-                    <!-- Les miniatures seront ajoutées ici dynamiquement -->
-                </div>
-            </div>
-        </div>
-        <div id="description-controls-wrapper">
-            <div id="photo-description" class="mt-3"></div>
-            <div id="photo-gallery-controls" class="mt-3 d-flex justify-content-between">
-                <button id="prev-photo" class="btn btn-secondary d-none d-lg-block">&lt; Précédent</button>
-                <button id="next-photo" class="btn btn-secondary d-none d-lg-block">Suivant &gt;</button>
-            </div>
-        </div>
-    `;
-
+////////////////////// Ouverture de la visionneuse Fancybox //////////////////////
+function openCityGalleryInFancybox(city) {
     const cityPhotos = getCityPhotos(city);
-    let currentPhotoIndex = 0;
 
-    function updateGallery() {
-        const photo = cityPhotos[currentPhotoIndex];
-        document.getElementById('gallery-photo').src = photo.image;
-        document.getElementById('photo-description').innerText = photo.description;
-    }
+    Fancybox.show(
+        cityPhotos.map((photo) => ({
+            src: photo.image,
+            thumb: photo.image,
+            caption: photo.description || '',  // Utilisation de la description comme légende
+            type: 'image'
+        })),
+        {
+            mainClass: 'fancybox-city-gallery',
+            dragToClose: false,
+            Carousel: {
+                infinite: true,
+            },
+            Thumbs: {
+                autoStart: true,
+            },
+            caption: function (fancybox, carousel, slide) {
+                return slide.caption; // On affiche le commentaire ici
+            },
+            afterShow: (fancybox) => {
+                const titleElement = document.createElement('div');
+                titleElement.textContent = city;
+                titleElement.classList.add('fancybox-city-title');
+                titleElement.style.position = 'absolute';
+                titleElement.style.top = '0'; // Placé au-dessus de l'image
+                titleElement.style.width = '100%';
+                titleElement.style.textAlign = 'center';
+                titleElement.style.fontSize = '1.5em';
+                titleElement.style.color = 'white';
+                titleElement.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+                titleElement.style.zIndex = '9999';
+                titleElement.style.padding = '10px';
 
-    function nextPhoto() {
-        currentPhotoIndex = (currentPhotoIndex + 1) % cityPhotos.length;
-        updateGallery();
-    }
-
-    function prevPhoto() {
-        currentPhotoIndex = (currentPhotoIndex - 1 + cityPhotos.length) % cityPhotos.length;
-        updateGallery();
-    }
-
-    document.getElementById('next-photo').addEventListener('click', nextPhoto);
-    document.getElementById('prev-photo').addEventListener('click', prevPhoto);
-
-    // Gestion du swipe pour changer les photos sur mobile
-    const galleryPhoto = document.getElementById('gallery-photo');
-    let touchStartX = 0;
-
-    galleryPhoto.addEventListener('touchstart', (event) => {
-        touchStartX = event.touches[0].clientX;
-    });
-
-    galleryPhoto.addEventListener('touchend', (event) => {
-        const touchEndX = event.changedTouches[0].clientX;
-        if (touchStartX - touchEndX > 50) {
-            nextPhoto(); // Glisser vers la gauche pour aller à la photo suivante
-        } else if (touchEndX - touchStartX > 50) {
-            prevPhoto(); // Glisser vers la droite pour aller à la photo précédente
+                document.querySelector('.fancybox__container').appendChild(titleElement);
+            }
         }
-    });
-
-    updateGallery();
-
-    // Afficher les vignettes sur les grands écrans uniquement
-    const thumbnailGallery = document.getElementById('thumbnail-gallery');
-    if (window.innerWidth >= 992) { // Correspond à la taille d'écran lg dans Bootstrap
-        cityPhotos.forEach((photo, index) => {
-            const thumbnailElement = document.createElement('img');
-            thumbnailElement.src = photo.image;
-            thumbnailElement.alt = `Miniature de ${city}`;
-            thumbnailElement.classList.add('img-thumbnail', 'mb-3', 'thumbnail-photo');
-            thumbnailElement.style.cursor = 'pointer';
-
-            thumbnailElement.addEventListener('click', function() {
-                currentPhotoIndex = index;
-                updateGallery();
-            });
-
-            thumbnailGallery.appendChild(thumbnailElement);
-        });
-    }
+    );
 }
 
-
-////////////////////// Détaille pour chaque photo par ville//////////////////////
+////////////////////// Données des photos par ville //////////////////////
 function getCityPhotos(city) {
     const photoData = {
         'Tokyo': [
             { image: '/assets/photo/Tokyo/tokyo1.jpg', description: 'Parc Ueno' },
             { image: '/assets/photo/Tokyo/tokyo2.jpg', description: 'Parc Ueno' },
-            { image: '/assets/photo/Tokyo/tokyo3.jpg', description: 'Yanaka quartier traditionnel ' },
+            { image: '/assets/photo/Tokyo/tokyo3.jpg', description: 'Yanaka quartier traditionnel' },
             { image: '/assets/photo/Tokyo/tokyo4.jpg', description: 'Temple Shitenno-ji, le plus vieux temple de Tokyo' },
             { image: '/assets/photo/Tokyo/tokyo5.jpg', description: 'Temple Shitenno-ji, le plus vieux temple de Tokyo sous une canicule' },
             { image: '/assets/photo/Tokyo/tokyo6.jpg', description: 'Temple Shitenno-ji, le plus vieux temple de Tokyo' },
-            { image: '/assets/photo/Tokyo/tokyo7.jpg', description: 'Temple Shitenno-ji, le plus vieux temple de Tokyo' },
-            { image: '/assets/photo/Tokyo/tokyo8.jpg', description: 'Shibuya Sky, avec notre meilleur copain Japonais' },
-            { image: '/assets/photo/Tokyo/tokyo9.jpg', description: 'En bas de la Shibuya Sky' },
-            { image: '/assets/photo/Tokyo/tokyo10.jpg', description: 'Vue panoramique du haut de la Shibuya Sky' },
-            { image: '/assets/photo/Tokyo/tokyo11.jpg', description: 'Vue panoramique du haut de la Shibuya Sky' },
-            { image: '/assets/photo/Tokyo/tokyo12.jpg', description: 'Vue panoramique du haut de la Shibuya Sky' },
-            { image: '/assets/photo/Tokyo/tokyo13.jpg', description: 'Vue panoramique du haut de la Shibuya Sky' },
-            { image: '/assets/photo/Tokyo/tokyo14.jpg', description: 'Vue panoramique du haut de la Shibuya Sky' },
-            { image: '/assets/photo/Tokyo/tokyo15.jpg', description: 'Le célèbre Shibuya Crossing:' },
-            { image: '/assets/photo/Tokyo/tokyo16.jpg', description: 'Deux amoureux en folie dans Tokyo' },
-            { image: '/assets/photo/Tokyo/tokyo17.jpg', description: 'Quartier Shibuya de nuit' },
-            { image: '/assets/photo/Tokyo/tokyo18.jpg', description: 'Quartier Shibuya de nuit' },
-            { image: '/assets/photo/Tokyo/tokyo19.jpg', description: 'Quartier des affaire de Tokyo' },
-            { image: '/assets/photo/Tokyo/tokyo20.jpg', description: 'Dans les métro de Tokyo' },
-            { image: '/assets/photo/Tokyo/tokyo21.jpg', description: '?????????' },
-            { image: '/assets/photo/Tokyo/tokyo22.jpg', description: '?????????' },
-            { image: '/assets/photo/Tokyo/tokyo23.jpg', description: '?????????' },
-            { image: '/assets/photo/Tokyo/tokyo24.jpg', description: '?????????' },
-            { image: '/assets/photo/Tokyo/tokyo25.jpg', description: '?????????' },
-            { image: '/assets/photo/Tokyo/tokyo26.jpg', description: '?????????' },
-            { image: '/assets/photo/Tokyo/tokyo27.jpg', description: '?????????' },
-            { image: '/assets/photo/Tokyo/tokyo28.jpg', description: '?????????' },
-            { image: '/assets/photo/Tokyo/tokyo29.jpg', description: '?????????' },
-            { image: '/assets/photo/Tokyo/tokyo30.jpg', description: '?????????' },
-            { image: '/assets/photo/Tokyo/tokyo31.jpg', description: '?????????' },
-            { image: '/assets/photo/Tokyo/tokyo32.jpg', description: '?????????' },
-            { image: '/assets/photo/Tokyo/tokyo33.jpg', description: '?????????' },
-
+            // Ajoute les autres photos ici
         ],
         'Kyoto': [
-            { image: 'kyoto1.jpg', description: 'Kyoto - Temple Kiyomizu-dera' },
-            { image: 'kyoto2.jpg', description: 'Kyoto - Sanctuaire Fushimi Inari-taisha' },
-            { image: 'kyoto3.jpg', description: 'Kyoto - Arashiyama Bamboo Grove' },
+            { image: '/assets/photo/Kyoto/kyoto1.jpg', description: 'Temple Kiyomizu-dera' },
+            { image: '/assets/photo/Kyoto/kyoto2.jpg', description: 'Sanctuaire Fushimi Inari-taisha' },
+            { image: '/assets/photo/Kyoto/kyoto3.jpg', description: 'Arashiyama Bamboo Grove' },
+            // Ajoute les autres photos ici
         ],
+        // Ajoute les autres villes ici
     };
 
     return photoData[city] || [];
@@ -203,4 +131,3 @@ function displayVideo() {
         </video>
     `;
 }
-

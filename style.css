@@ -167,73 +167,14 @@ h1.display-5 {
 }
 
 /* Gallery styles */
-.titre-galery h1{
-    font-size: 10vw; /* Taille de la police, ajuste si nécessaire */
-    font-weight: bold; /* Style gras */
-    background: url('/assets/photo/Tokyo/tokyo14.jpg') no-repeat center; /* Chemin vers ton image */
-    background-size: cover; /* Assure que l'image couvre tout le texte */
-    -webkit-background-clip: text; /* Découpe l'image dans le texte */
-    background-clip: text; /* Supporte d'autres navigateurs */
-    color: transparent; /* Rend le texte transparent pour que seule l'image soit visible */
-    margin: 0;
-    padding: 0;
-    line-height: 1.2; /* Ajuste l'espacement vertical */
-    text-align: center;
-}
-#photo-gallery {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    border-radius: 3%;
-}
 
-#main-photo-section {
-    position: relative;
-    padding: 1px; /* Ajoute un peu d'espace autour du conteneur pour le contour */
-    background-color: white; /* Couleur de fond du conteneur pour le contour */
-    border-radius: 3%;
-
-}
-
-#gallery-photo {
-    width: 100%; /* Prend toute la largeur disponible */
-    height: 100vh; /* Garde les proportions de l'image */
-    max-height: 600px; /* Limite la hauteur du conteneur */
-    border: 5px solid white; /* Contour blanc autour de l'image */
-    box-sizing: border-box; /* Inclut le bord dans les dimensions de l'image */
-    border-radius: 3%;
-}
-
-#photo-description {
-    background-color: #ffffff;
-    padding: 15px;
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: bold;
-    margin-top: 10px;
-    border-radius: 8px;
-}
-
-/* Styles pour les mosaïque vignettes d'images dans la gallery */
-#thumbnail-gallery {
-    display: flex;
-    flex-wrap: wrap; /* Permet le wrapping des miniatures à la ligne suivante */
-    gap: 10px; /* Espacement entre les miniatures */
-    padding: 10px;
-    justify-content: start; /* Aligne les miniatures sur la gauche */
-}
-
-.thumbnail-photo {
-    width: 80px;  /* Largeur fixe pour les miniatures */
-    height: 80px; /* Hauteur fixe pour les miniatures */
-    object-fit: cover; /* Remplit la vignette tout en gardant les proportions */
-    border-radius: 4px; /* Coins légèrement arrondis */
-    border: 2px solid #ddd; /* Bord gris clair autour des miniatures */
-}
-
-.thumbnail-photo:hover {
-    border-color: #333; /* Change la couleur du bord au survol */
-    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+/* Visionneuse d'image de la galerie photo */
+.fancybox__caption {
+    background-color: rgba(0, 0, 0, 0.7); /* Couleur de fond semi-transparente */
+    color: white; /* Couleur du texte */
+    padding: 10px; /* Espacement interne */
+    text-align: center; /* Centrer le texte */
+    font-size: 1em; /* Taille de la police */
 }
 
 /*   Style pour la vidéo */
@@ -244,6 +185,8 @@ h1.display-5 {
     margin: 0 auto;  /* Centre la vidéo horizontalement si elle est plus petite que le conteneur */
     box-sizing: border-box; /* Inclut les bordures et le padding dans les dimensions totales */
 }
+
+
 
 
 
