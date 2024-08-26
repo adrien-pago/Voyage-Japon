@@ -83,7 +83,6 @@ function openCityGalleryInFancybox(city) {
             },
             caption: function (fancybox, carousel, slide) {
                 const captionText = slide.caption || '';
-                console.log('Slide Caption:', captionText); // Debug
                 return captionText;
             },
             afterShow: (fancybox) => {
