@@ -63,13 +63,14 @@ function openCityGalleryInFancybox(city) {
     clearFancybox(); // Nettoyer les anciennes instances
     const cityPhotos = getCityPhotos(city);
 
-    console.log('Opening Fancybox with photos:', cityPhotos); // Debug
+   // Ajouter un titre avec le nom de la ville dans le contenu de la Fancybox
+    const cityTitle = `<div class="fancybox-city-title">${city}</div>`;
 
     Fancybox.show(
         cityPhotos.map((photo) => ({
             src: photo.image,
             thumb: photo.image,
-            caption: photo.description || '', 
+            caption: cityTitle + (photo.description || ''), // Ajouter le titre de la ville au-dessus de la description
             type: 'image'
         })),
         {
@@ -81,31 +82,10 @@ function openCityGalleryInFancybox(city) {
             Thumbs: {
                 autoStart: true,
             },
-            caption: function (fancybox, carousel, slide) {
-                const captionText = slide.caption || '';
-                return captionText;
-            },
-            afterShow: (fancybox) => {
-                console.log('Fancybox Instance:', fancybox);
-
-                const titleElement = document.createElement('div');
-                titleElement.textContent = city;
-                titleElement.classList.add('fancybox-city-title');
-                titleElement.style.position = 'absolute';
-                titleElement.style.top = '0'; 
-                titleElement.style.width = '100%';
-                titleElement.style.textAlign = 'center';
-                titleElement.style.fontSize = '1.5em';
-                titleElement.style.color = 'white';
-                titleElement.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-                titleElement.style.zIndex = '9999';
-                titleElement.style.padding = '10px';
-
-                document.querySelector('.fancybox__container').appendChild(titleElement);
-            }
         }
     );
 }
+
 
 
 function getCityPhotos(city) {
