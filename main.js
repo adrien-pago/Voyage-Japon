@@ -6,7 +6,6 @@ document.getElementById('video-btn').addEventListener('click', function() {
     displayVideo();
 });
 
-////////////////////// Affichage des vignettes de chaque ville //////////////////////
 function displayPhotoThumbnails() {
     const mediaDisplay = document.getElementById('media-display');
     mediaDisplay.innerHTML = '';
@@ -54,15 +53,23 @@ function displayPhotoThumbnails() {
     mediaDisplay.appendChild(rowElement);
 }
 
-////////////////////// Ouverture de la visionneuse Fancybox //////////////////////
+function clearFancybox() {
+    // Supprimer les éléments Fancybox existants
+    const fancyboxContainers = document.querySelectorAll('.fancybox__container');
+    fancyboxContainers.forEach(container => container.remove());
+}
+
 function openCityGalleryInFancybox(city) {
+    clearFancybox(); // Nettoyer les anciennes instances
     const cityPhotos = getCityPhotos(city);
+
+    console.log('Opening Fancybox with photos:', cityPhotos); // Debug
 
     Fancybox.show(
         cityPhotos.map((photo) => ({
             src: photo.image,
             thumb: photo.image,
-            caption: photo.description || '',  // Utilisation de la description comme légende
+            caption: photo.description || '', 
             type: 'image'
         })),
         {
@@ -75,14 +82,18 @@ function openCityGalleryInFancybox(city) {
                 autoStart: true,
             },
             caption: function (fancybox, carousel, slide) {
-                return slide.caption; // On affiche le commentaire ici
+                const captionText = slide.caption || '';
+                console.log('Slide Caption:', captionText); // Debug
+                return captionText;
             },
             afterShow: (fancybox) => {
+                console.log('Fancybox Instance:', fancybox);
+
                 const titleElement = document.createElement('div');
                 titleElement.textContent = city;
                 titleElement.classList.add('fancybox-city-title');
                 titleElement.style.position = 'absolute';
-                titleElement.style.top = '0'; // Placé au-dessus de l'image
+                titleElement.style.top = '0'; 
                 titleElement.style.width = '100%';
                 titleElement.style.textAlign = 'center';
                 titleElement.style.fontSize = '1.5em';
@@ -97,31 +108,50 @@ function openCityGalleryInFancybox(city) {
     );
 }
 
-////////////////////// Données des photos par ville //////////////////////
+
 function getCityPhotos(city) {
     const photoData = {
         'Tokyo': [
             { image: '/assets/photo/Tokyo/tokyo1.jpg', description: 'Parc Ueno' },
             { image: '/assets/photo/Tokyo/tokyo2.jpg', description: 'Parc Ueno' },
-            { image: '/assets/photo/Tokyo/tokyo3.jpg', description: 'Yanaka quartier traditionnel' },
+            { image: '/assets/photo/Tokyo/tokyo3.jpg', description: 'Yanaka quartier traditionnel ' },
             { image: '/assets/photo/Tokyo/tokyo4.jpg', description: 'Temple Shitenno-ji, le plus vieux temple de Tokyo' },
             { image: '/assets/photo/Tokyo/tokyo5.jpg', description: 'Temple Shitenno-ji, le plus vieux temple de Tokyo sous une canicule' },
             { image: '/assets/photo/Tokyo/tokyo6.jpg', description: 'Temple Shitenno-ji, le plus vieux temple de Tokyo' },
-            // Ajoute les autres photos ici
+            { image: '/assets/photo/Tokyo/tokyo7.jpg', description: 'Temple Shitenno-ji, le plus vieux temple de Tokyo' },
+            { image: '/assets/photo/Tokyo/tokyo8.jpg', description: 'Shibuya Sky, avec notre meilleur copain Japonais' },
+            { image: '/assets/photo/Tokyo/tokyo9.jpg', description: 'En bas de la Shibuya Sky' },
+            { image: '/assets/photo/Tokyo/tokyo10.jpg', description: 'Vue panoramique du haut de la Shibuya Sky' },
+            { image: '/assets/photo/Tokyo/tokyo11.jpg', description: 'Vue panoramique du haut de la Shibuya Sky' },
+            { image: '/assets/photo/Tokyo/tokyo12.jpg', description: 'Vue panoramique du haut de la Shibuya Sky' },
+            { image: '/assets/photo/Tokyo/tokyo13.jpg', description: 'Vue panoramique du haut de la Shibuya Sky' },
+            { image: '/assets/photo/Tokyo/tokyo14.jpg', description: 'Vue panoramique du haut de la Shibuya Sky' },
+            { image: '/assets/photo/Tokyo/tokyo15.jpg', description: 'Le célèbre Shibuya Crossing:' },
+            { image: '/assets/photo/Tokyo/tokyo16.jpg', description: 'Deux amoureux en folie dans Tokyo' },
+            { image: '/assets/photo/Tokyo/tokyo17.jpg', description: 'Quartier Shibuya de nuit' },
+            { image: '/assets/photo/Tokyo/tokyo18.jpg', description: 'Quartier Shibuya de nuit' },
+            { image: '/assets/photo/Tokyo/tokyo19.jpg', description: 'Quartier des affaire de Tokyo' },
+            { image: '/assets/photo/Tokyo/tokyo20.jpg', description: 'Dans les métro de Tokyo' },
+            { image: '/assets/photo/Tokyo/tokyo21.jpg', description: '?????????' },
+            { image: '/assets/photo/Tokyo/tokyo22.jpg', description: '?????????' },
+            { image: '/assets/photo/Tokyo/tokyo23.jpg', description: '?????????' },
+            { image: '/assets/photo/Tokyo/tokyo24.jpg', description: '?????????' },
+            { image: '/assets/photo/Tokyo/tokyo25.jpg', description: '?????????' },
+            { image: '/assets/photo/Tokyo/tokyo26.jpg', description: '?????????' },
+            { image: '/assets/photo/Tokyo/tokyo27.jpg', description: '?????????' },
+            { image: '/assets/photo/Tokyo/tokyo28.jpg', description: '?????????' },
+            { image: '/assets/photo/Tokyo/tokyo29.jpg', description: '?????????' },
+            { image: '/assets/photo/Tokyo/tokyo30.jpg', description: '?????????' },
+            { image: '/assets/photo/Tokyo/tokyo31.jpg', description: '?????????' },
+            { image: '/assets/photo/Tokyo/tokyo32.jpg', description: '?????????' },
+            { image: '/assets/photo/Tokyo/tokyo33.jpg', description: '?????????' },
         ],
-        'Kyoto': [
-            { image: '/assets/photo/Kyoto/kyoto1.jpg', description: 'Temple Kiyomizu-dera' },
-            { image: '/assets/photo/Kyoto/kyoto2.jpg', description: 'Sanctuaire Fushimi Inari-taisha' },
-            { image: '/assets/photo/Kyoto/kyoto3.jpg', description: 'Arashiyama Bamboo Grove' },
-            // Ajoute les autres photos ici
-        ],
-        // Ajoute les autres villes ici
+        // autres villes...
     };
-
-    return photoData[city] || [];
+    const photos = photoData[city] || [];
+    return photos;
 }
 
-////////////////////// Vidéo //////////////////////
 function displayVideo() {
     const mediaDisplay = document.getElementById('media-display');
     mediaDisplay.innerHTML = `

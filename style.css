@@ -175,7 +175,9 @@ h1.display-5 {
     padding: 10px; /* Espacement interne */
     text-align: center; /* Centrer le texte */
     font-size: 1em; /* Taille de la police */
+    border-radius: 5px; /* Coins arrondis pour une meilleure apparence */
 }
+
 
 /*   Style pour la vidéo */
 .video-fullscreen{
