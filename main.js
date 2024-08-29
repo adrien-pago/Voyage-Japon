@@ -424,6 +424,11 @@ function getCityPhotos(city) {
             { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Hakone/hakone21.jpg', description: '?????????' },
             { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Hakone/hakone22.jpg', description: '?????????' },
             { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Hakone/hakone23.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Hakone/hakone24.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Hakone/hakone25.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Hakone/hakone26.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Hakone/hakone27.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Hakone/hakone28.jpg', description: '?????????' },
         ],
 
         'Bonus' :[
