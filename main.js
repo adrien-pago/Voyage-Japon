@@ -11,18 +11,22 @@ function displayPhotoThumbnails() {
     mediaDisplay.innerHTML = '';
 
     const cities = [
-        { city: 'Tokyo', image: '/assets/photo/Tokyo/tokyo10.jpg' },
-        { city: 'Kyoto', image: '/assets/photo/Kyoto/kyoto1.jpg' },
-        { city: 'Osaka', image: '/assets/photo/Osaka/osaka1.jpg' },
-        { city: 'Matsumoto', image: '/assets/photo/Matsumoto/matsumoto1.jpg' },
-        { city: 'Kamakura', image: '/assets/photo/Kamakura/kamakura1.jpg' },
-        { city: 'Kanazawa', image: '/assets/photo/Kanazawa/kanazawa1.jpg' },
-        { city: 'Himeji', image: '/assets/photo/Himeji/himeji1.jpg' },
-        { city: 'Hiroshima', image: '/assets/photo/Hiroshima/hiroshima1.jpg' },
-        { city: 'Miyajima', image: '/assets/photo/Miyajima/miyajima1.jpg' },
-        { city: 'Shirakawa-go et Ainokura', image: '/assets/photo/Shirakawa-go et Ainokura/ainokura1.jpg' },
-        { city: 'Hakone', image: '/assets/photo/Hakone/hakone1.jpg' },
-        { city: 'Bonus', image: '/assets/photo/Bonus/bonus1.jpg' },
+        { city: 'Tokyo', image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Tokyo/tokyo10.jpg' },
+        { city: 'Kyoto', image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Kyoto/kyoto1.jpg' },
+        { city: 'Osaka', image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Osaka/osaka1.jpg' },
+        { city: 'Matsumoto', image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Matsumoto/matsumoto1.jpg' },
+        { city: 'Kamakura', image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Kamakura/kamakura1.jpg' },
+        { city: 'Kanazawa', image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Kanazawa/kanazawa1.jpg' },
+        { city: 'Himeji', image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Himeji/himeji1.jpg' },
+        { city: 'Hiroshima', image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Hiroshima/hiroshima1.jpg' },
+        { city: 'Miyajima', image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Miyajima/miyajima1.jpg' },
+        { city: 'Shirakawa-go et Ainokura', image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Shirakawa-go et Ainokura/shi1.jpg' },
+        { city: 'Hakone', image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Hakone/hakone1.jpg' },
+        { city: 'Nara', image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara1.jpg' },
+        { city: 'Takayama', image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama1.jpg' },
+        { city: 'Une petite faim ?', image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food24.jpg' },
+        { city: 'Bonus', image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Bonus/bonus1.jpg' },
+        
     ];
 
     const rowElement = document.createElement('div');
@@ -85,8 +89,6 @@ function openCityGalleryInFancybox(city) {
         }
     );
 }
-
-
 
 function getCityPhotos(city) {
     const photoData = {
@@ -375,7 +377,7 @@ function getCityPhotos(city) {
         ],
 
         'Shirakawa-go et Ainokura' :[
-            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Shirakawa-go et Ainokura/shi.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Shirakawa-go et Ainokura/shi1.jpg', description: '?????????' },
             { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Shirakawa-go et Ainokura/shi2.jpg', description: '?????????' },
             { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Shirakawa-go et Ainokura/shi3.jpg', description: '?????????' },
             { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Shirakawa-go et Ainokura/shi4.jpg', description: '?????????' },
@@ -431,6 +433,92 @@ function getCityPhotos(city) {
             { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Hakone/hakone28.jpg', description: '?????????' },
         ],
 
+        'Nara' :[
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara1.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara2.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara3.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara4.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara5.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara6.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara7.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara8.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara9.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara10.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara1.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara12.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara13.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara14.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara15.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara6.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara17.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara18.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara19.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara20.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara21.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara22.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Nara/nara23.jpg', description: '?????????' },
+        ],
+
+        'Takayama' :[
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama1.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama2.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama3.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama4.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama5.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama6.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama7.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama8.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama9.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama10.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama11.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama12.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama13.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama14.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama15.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama16.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama17.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama18.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama19.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama20.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama21.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama22.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Takayama/takayama23.jpg', description: '?????????' },
+        ],
+
+        'Une petite faim ?':[
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food1.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food2.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food3.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food4.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food5.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food6.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food7.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food8.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food9.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food10.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food11.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food2.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food13.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food14.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food15.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food16.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food17.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food18.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food19.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food20.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food21.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food22.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/foods23.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food24.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food25.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food26.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food27.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food28.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food29.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food30.jpg', description: '?????????' },
+            { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Food/food31.jpg', description: '?????????' },
+        ],
+
         'Bonus' :[
             { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Bonus/bonus1.jpg', description: '?????????' },
             { image: 'https://adrien-pago-portfolio.fr/japon/assets/photo/Bonus/bonus2.jpg', description: '?????????' },
@@ -466,7 +554,7 @@ function displayVideo() {
     const mediaDisplay = document.getElementById('media-display');
     mediaDisplay.innerHTML = `
         <video controls class="video-fullscreen">
-            <source src="/assets/video/projet.mp4" type="video/mp4">
+            <source src="https://adrien-pago-portfolio.fr/japon/assets/video/projet.mp4" type="video/mp4">
             Votre navigateur ne supporte pas la balise vidéo.
         </video>
     `;
