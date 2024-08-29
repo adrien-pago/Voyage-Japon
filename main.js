@@ -125,7 +125,108 @@ function getCityPhotos(city) {
             { image: '/assets/photo/Tokyo/tokyo32.jpg', description: '?????????' },
             { image: '/assets/photo/Tokyo/tokyo33.jpg', description: '?????????' },
         ],
-        // autres villes...
+        'Kyoto':[
+            { image: '/assets/photo/Kyoto/kyoto1.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto2.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto3.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto4.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto5.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto6.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto7.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto8.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto9.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto10.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto11.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto12.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto13.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto14.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto15.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto16.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto17.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto18.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto19.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto20.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto21.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto22.jpg', description: 'Alizée en compagnie de Djidji' },
+            { image: '/assets/photo/Kyoto/kyoto23.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto24.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto25.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto26.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto27.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto28.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto29.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto30.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto31.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto32.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto33.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto34.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto35.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto36.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto37.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto38.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto39.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto40.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto41.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto42.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto43.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto44.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto45.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto46.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto47.jpg', description: '?????????' },
+            { image: '/assets/photo/Kyoto/kyoto48.jpg', description: '?????????' },
+        ],
+        'Osaka' :[
+            { image: '/assets/photo/Osaka/osaka1.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka2.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka3.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka4.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka5.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka6.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka7.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka8.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka9.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka10.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka11.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka12.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka13.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka14.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka15.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka16.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka17.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka18.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka19.jpg', description: '?????????' },
+            { image: '/assets/photo/Osaka/osaka20.jpg', description: '?????????' },
+
+        ],
+        'Matsumoto' :[
+
+        ],
+        'Kanazawa' :[
+
+        ],
+        'Kamakura' :[
+
+        ],
+        'Himeji' :[
+
+        ],
+        'Hiroshima' :[
+
+        ],
+   
+        'Miyajima' :[
+
+        ],
+        'Shirakawa-go et Ainokura' :[
+
+        ],
+        'Hakone' :[
+
+        ],
+        'Bonus' :[
+
+        ],
+       
     };
     const photos = photoData[city] || [];
     return photos;
